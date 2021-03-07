@@ -18,7 +18,7 @@ const TheirMessage = ({ lastMessage, message }) => {
                         className="message-image"
                         style={{ marginLeft: isFiristMessageByUser ? '4px' : '48px' }} />
                 ) : (
-                    <div className="message" style={{ float: 'left', backgroundColor: '#3B2A50' }}>
+                    <div className="message" style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFiristMessageByUser ? '4px' : '48px' }}>
                         {message.text}
                     </div>
                 )
