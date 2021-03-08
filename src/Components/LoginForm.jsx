@@ -8,20 +8,26 @@ const LoginForm = () => {
     const [userName, setUserName] = useState('');
     const [passwd, setPasswd] = useState('');
     const [error, setError] = useState('');
+
+
+    const handleSubmit = (e) => {
+
+    }
+
     return (
         <div className="wrapper">
             <div className="form">
                 <h1 className="title">Chat Application</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} className="input" placeholder="Username" required />
-                    <input type="password" value={password} onChange={(e) => setPasswd(e.target.value)} className="input" placeholder="Password" required />
+                    <input type="password" value={passwd} onChange={(e) => setPasswd(e.target.value)} className="input" placeholder="Password" required />
                     <div align="center">
                         <button type="submit" className="button">
                             <span>Start chatting</span>
                         </button>
                     </div>
                 </form>
-                <h1> Eror</h1>
+                <h1> {error}</h1>
             </div>
         </div>
     )
