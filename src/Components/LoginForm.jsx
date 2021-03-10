@@ -10,9 +10,16 @@ const LoginForm = () => {
     const [error, setError] = useState('');
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const AuthObject = { 'Project-ID': "4b2e4854-8465-46cd-9b34-39962716c0fd", 'User-Name': "username", 'User-Secret': "usersecret" };
+        const AuthObject = { 'Project-ID': "4b2e4854-8465-46cd-9b34-39962716c0fd", 'User-Name': userName, 'User-Secret': passwd };
+        try {
+            await axios.get('https://api.chatengine.io/chats', { headers: AuthObject });
+            localStorage.setItem('username', userName)
+            localStorage.setItem('password', passwd)
+        } catch (error) {
+
+        }
     }
 
     return (
